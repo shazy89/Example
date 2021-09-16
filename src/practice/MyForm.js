@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Formik, Field } from "formik";
 import { Form, Button } from "react-bootstrap";
 import Select from "react-select";
+import ReactSlick from "../reactSlick";
 import makeAnimated from "react-select/animated";
 
 import Inputs from "./Inputs";
