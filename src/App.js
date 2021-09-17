@@ -1,15 +1,41 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getPople } from './apis/practice';
 import axios from 'axios';
-import Home from './Home';
-import MyForm from './practice/MyForm';
-import PracticeAnimation from './PracticeAnimation';
-import BoxMain from './BoxMain';
-import Background from './Background';
-import Slider from './reactSlick';
+//import Home from './Home';
+//import MyForm from './practice/MyForm';
+//import PracticeAnimation from './PracticeAnimation';
+//import BoxMain from './BoxMain';
+//import Background from './Background';
+//import Slider from './reactSlick';
+//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ApiNYCTimes from './ApiNYCTimes';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
+  function isString(val) {
+    return typeof val === 'string';
+  }
+  function getLocalData(url, method) {
+    let data = null;
+    if (url.includes('/getpeople')) data = getPople();
+
+    return {
+      status: 200,
+      text: () => Promise.resolve(isString(data) ? data : JSON.stringify(data)),
+      json: () => Promise.resolve(data),
+    };
+  }
+  async function getUserData() {
+    try {
+      const response = await getLocalData('/getpeople', 'GET');
+      debugger;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    getUserData();
+  }, []);
   return (
     <>
       {
@@ -22,7 +48,20 @@ const App = () => {
         //     </Switch>
         //   </Router>
       }
-      <ApiNYCTimes />
+      <div
+        style={{
+          display: 'flex',
+          height: '100%',
+          flexFlow: 'wrap',
+          marginTop: '1rem',
+          justifyContent: 'center',
+        }}
+      >
+        <ApiNYCTimes />
+        <ApiNYCTimes />
+        <ApiNYCTimes />
+        <ApiNYCTimes />
+      </div>
     </>
   );
 };

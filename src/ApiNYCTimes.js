@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './practice.css';
-import { Button } from './components/Button';
 import { Display } from './components/Display';
 import { ChangeSeconds } from './components/ChangeSeconds';
 import { Contros } from './components/Contros';
@@ -32,7 +31,7 @@ const ApiNYCTimes = () => {
   }, [counter, handleCounter, reset, start]);
 
   return (
-    <section className="container">
+    <section className="container_xxx">
       <div className="progress_section">
         <div className="display_container">
           <Display
