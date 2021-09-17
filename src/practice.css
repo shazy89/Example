@@ -29,3 +29,16 @@
 .margin_top_two {
     margin-top: 2rem;
 }
+
+.color_pink {
+    background-color: #ff547d;
+}
+.color_green {
+    background-color: #70ff54;
+}
+.color_black {
+    background-color: #130e0f;
+}
+.color_blue {
+    background-color: #5363ad;
+}
