@@ -7,7 +7,7 @@ export const Display = ({ counter, setCounter, reset }) => {
 
   useEffect(() => {
     const handleChanges = () => {
-      if (counter === 60) {
+      if (counter >= 60) {
         setMins(mins + 1);
         setCounter(0);
       }
@@ -19,8 +19,12 @@ export const Display = ({ counter, setCounter, reset }) => {
     handleChanges();
   }, [counter, mins, setCounter, reset]);
   return (
-    <h1 className="display">{`${formatTime(mins)} : ${formatTime(
-      counter
-    )}`}</h1>
+    <h1 className="display">
+      <span>{formatTime(mins)}</span>
+      <span>:</span>
+      <span>{formatTime(counter)}</span>
+    </h1>
   );
 };
+/*  */
+//    {`${formatTime(mins)} : ${formatTime(counter)}`}

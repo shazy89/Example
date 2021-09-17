@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './practice.css';
 import { Button } from './components/Button';
 import { Display } from './components/Display';
+import { ChangeSeconds } from './components/ChangeSeconds';
 const ApiNYCTimes = () => {
   const [counter, setCounter] = useState(0);
   const [start, setStart] = useState(false);
@@ -9,7 +10,7 @@ const ApiNYCTimes = () => {
   const interval = useRef(null);
 
   const handleCounter = useCallback(
-    () => setCounter((counter) => counter + 1),
+    () => setCounter((counter) => counter + 4),
     []
   );
   const handleStart = () => {
@@ -60,6 +61,7 @@ const ApiNYCTimes = () => {
             clear
           </Button>
         </div>
+        <ChangeSeconds />
       </div>
     </section>
   );
