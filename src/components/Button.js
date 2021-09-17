@@ -6,10 +6,13 @@ export const Button = ({
   size = 'md',
   color = 'pink',
   textColor = '#f5f5f5',
+  spaceTop,
+  handleDisplay,
 }) => {
   return (
     <button
-      className={`radio_button ${fontSize[size]} ${defaultColors[color]}`}
+      onClick={handleDisplay}
+      className={`radio_button ${fontSize[size]} ${defaultColors[color]} ${spaceTop}`}
     >
       {children}
     </button>

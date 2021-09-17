@@ -1,8 +1,8 @@
 export const fontSize = {
-  sm: 'font_size_sm',
-  md: 'font_size_md',
-  lr: 'font_size_lr',
-  xl: 'font_size_xl',
+  sm: 'button_size_sm',
+  md: 'button_size_md',
+  lr: 'button_size_lr',
+  xl: 'button_size_xl',
 };
 export const defaultColors = {
   pink: 'color_pink',

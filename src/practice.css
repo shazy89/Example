@@ -1,29 +1,63 @@
 .container {
     padding: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     height: 100%;
     width: 100%;
 }
 .radio_button {
     padding: 1rem;
+    opacity: 0.9;
     border-radius: 50%;
     border: none;
-    
+
+    box-shadow: 3px 4px 15px 0px rgba(13, 13, 13, 0.678);
+    transition:  transform 0.5s, opacity 0.5s;
+}
+.radio_button:hover {
+    transform: scale(1.02);
+    box-shadow: 3px 4px 15px 0px rgba(13, 13, 13, 0.808);
+    opacity: 1;
+}
+.radio_button:active {
+    transform: scale(1);
+    box-shadow: 3px 4px 15px 0px rgba(13, 13, 13, 0.678);
+}
+.progress_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
-.font_size_sm {
+.buttons_section {
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    width: 100%;
+    width: 30rem;
+}
+.button_size_sm {
+    width: 3rem;
+    height: 3rem;
     font-size: 1rem;
 }
-.font_size_md {
-   font-size: 1.5rem;
+.button_size_md {
+    width: 5rem;
+    height: 5rem;
+    font-size: 1.2rem;
 }
-.font_size_lr {
-   font-size: 2rem;
+.button_size_lr {
+    width: 6rem;
+    height: 6rem;
 }
-.font_size_xl {
-   font-size: 2.5rem;
+.button_size_xl {
+    width: 7rem;
+    height: 7rem;
 }
 
 .margin_top_one {
@@ -48,4 +82,16 @@
 .color_blue {
     background-color: #5363ad;
     color: #f5f5f5
+}
+.display_container {
+   width: 30rem; 
+   background-color: rgba(192, 192, 192, 0.726);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 3px 4px 15px 0px rgba(13, 13, 13, 0.678);
+
+}
+.display {
+    font-size: 5rem;
 }
