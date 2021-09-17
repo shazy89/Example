@@ -7,11 +7,11 @@ export const Button = ({
   color = 'pink',
   textColor = '#f5f5f5',
   spaceTop,
-  handleDisplay,
+  onClick,
 }) => {
   return (
     <button
-      onClick={handleDisplay}
+      onClick={onClick}
       className={`radio_button ${fontSize[size]} ${defaultColors[color]} ${spaceTop}`}
     >
       {children}
