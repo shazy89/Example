@@ -3,15 +3,17 @@ import './practice.css';
 import { Button } from './components/Button';
 import { Display } from './components/Display';
 import { ChangeSeconds } from './components/ChangeSeconds';
+import { Contros } from './components/Contros';
 const ApiNYCTimes = () => {
   const [counter, setCounter] = useState(0);
   const [start, setStart] = useState(false);
   const [reset, setReset] = useState(false);
+  const [targetSeconds, setTargetSeconds] = useState(1);
   const interval = useRef(null);
 
   const handleCounter = useCallback(
-    () => setCounter((counter) => counter + 4),
-    []
+    () => setCounter((counter) => counter + targetSeconds),
+    [targetSeconds]
   );
   const handleStart = () => {
     if (reset) setReset(false);
@@ -40,28 +42,12 @@ const ApiNYCTimes = () => {
             reset={reset}
           />
         </div>
-        <div className="buttons_section margin_top_two">
-          <Button size="md" spaceTop="margin_top_two" onClick={handleStart}>
-            start
-          </Button>
-          <Button
-            size="md"
-            spaceTop="margin_top_two"
-            color="green"
-            onClick={() => setStart(false)}
-          >
-            pause
-          </Button>
-          <Button
-            size="md"
-            spaceTop="margin_top_two"
-            color="blue"
-            onClick={() => setReset(true)}
-          >
-            clear
-          </Button>
-        </div>
-        <ChangeSeconds />
+        <Contros
+          handleStart={handleStart}
+          setStart={setStart}
+          setReset={setReset}
+        />
+        <ChangeSeconds onClick={setTargetSeconds} />
       </div>
     </section>
   );
