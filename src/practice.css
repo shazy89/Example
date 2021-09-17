@@ -1,0 +1,31 @@
+.container {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.button {
+    padding: 0.3rem;
+}
+
+.font_size_sm {
+    font-size: 1rem;
+}
+.font_size_md {
+    margin-top: 1.5rem;
+}
+.font_size_lr {
+    margin-top: 2rem;
+}
+.font_size_xl {
+    margin-top: 2.5rem;
+}
+
+.margin_top_one {
+    margin-top: 1rem;
+}
+.margin_top_two {
+    margin-top: 2rem;
+}
