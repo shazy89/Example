@@ -6,21 +6,24 @@
     height: 100%;
     width: 100%;
 }
-.button {
-    padding: 0.3rem;
+.radio_button {
+    padding: 1rem;
+    border-radius: 50%;
+    border: none;
+    
 }
 
 .font_size_sm {
     font-size: 1rem;
 }
 .font_size_md {
-    margin-top: 1.5rem;
+   font-size: 1.5rem;
 }
 .font_size_lr {
-    margin-top: 2rem;
+   font-size: 2rem;
 }
 .font_size_xl {
-    margin-top: 2.5rem;
+   font-size: 2.5rem;
 }
 
 .margin_top_one {
@@ -32,13 +35,17 @@
 
 .color_pink {
     background-color: #ff547d;
+    color: #f5f5f5
 }
 .color_green {
     background-color: #70ff54;
+    color: #0e0808
 }
 .color_black {
-    background-color: #130e0f;
+    background-color: #1d0f0f;
+    color: #f5f5f5
 }
 .color_blue {
     background-color: #5363ad;
+    color: #f5f5f5
 }

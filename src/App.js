@@ -8,7 +8,7 @@ import Background from './Background';
 import Slider from './reactSlick';
 import ApiNYCTimes from './ApiNYCTimes';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-//
+
 const App = () => {
   return (
     <>
