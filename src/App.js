@@ -16,6 +16,12 @@ import fs from 'fs';
 import { Display } from './components/Display';
 import { PracticeModal } from './PracticeModal.js';
 const App = () => {
+  const [show, setShow] = useState(false);
+
+  const handleModal = () => {
+    show ? setShow(false) : setShow(true);
+  };
+  /*
   const [fetchPerson, setFetchPerson] = useState('');
 
   function isString(val) {
@@ -46,7 +52,7 @@ const App = () => {
   useEffect(() => {
     getData();
   }, [fetchPerson]);
-
+*/
   return (
     <div className="main-div">
       {
@@ -59,7 +65,8 @@ const App = () => {
         //     </Switch>
         //   </Router>
       }
-      <PracticeModal />
+      {show && <PracticeModal handleModal={handleModal} />}
+      <button onClick={handleModal}>Trigger Modal</button>
     </div>
   );
 };

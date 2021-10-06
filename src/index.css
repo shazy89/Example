@@ -184,4 +184,23 @@ code {
   background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  /* we can add ritate("num"deg) and diferent functions to css*/
+  0% {
+    opacity: 0;
+
+  }
+  100% {
+    opacity: 1;
+ 
+  }
+}
+.modal-image {
+  width: 30rem;
+  height: auto;
 }
