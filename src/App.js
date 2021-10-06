@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './index.css';
 import { getPople } from './apis/practice';
 import axios from 'axios';
 import { person } from './apis/index';
@@ -9,7 +10,7 @@ import myData from './apis/try.json';
 //import BoxMain from './BoxMain';
 //import Background from './Background';
 //import Slider from './reactSlick';
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import ApiNYCTimes from './ApiNYCTimes';
 import fs from 'fs';
 import { Display } from './components/Display';
@@ -47,7 +48,7 @@ const App = () => {
   }, [fetchPerson]);
 
   return (
-    <>
+    <div className="main-div">
       {
         //    <Router>
         //     <Switch>
@@ -58,8 +59,8 @@ const App = () => {
         //     </Switch>
         //   </Router>
       }
-      <ApiNYCTimes />
-    </>
+      <PracticeModal />
+    </div>
   );
 };
 

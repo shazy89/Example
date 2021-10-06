@@ -178,3 +178,10 @@ code {
   height: 100%;
   display: inline-block;
   */
+.main-div {
+  box-sizing: border-box;
+  background: url('https://res.cloudinary.com/dytheecsk/image/upload/c_scale,w_1903/v1632321778/jess-bailey-l3N9Q27zULw-unsplash_ykoaq1.jpg');
+  background-size: cover;
+  background-position: 50%;
+  background-attachment: fixed;
+}
