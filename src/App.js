@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getPople } from './apis/practice';
 import axios from 'axios';
+import { person } from './apis/index';
+import myData from './apis/try.json';
 //import Home from './Home';
 //import MyForm from './practice/MyForm';
 //import PracticeAnimation from './PracticeAnimation';
@@ -9,33 +11,41 @@ import axios from 'axios';
 //import Slider from './reactSlick';
 //import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ApiNYCTimes from './ApiNYCTimes';
-
+import fs from 'fs';
+import { Display } from './components/Display';
+import { PracticeModal } from './PracticeModal.js';
 const App = () => {
+  const [fetchPerson, setFetchPerson] = useState('');
+
   function isString(val) {
     return typeof val === 'string';
   }
-  function getLocalData(url, method) {
-    let data = null;
-    if (url.includes('/getpeople')) data = getPople();
+  const newData = {
+    person: 'Pipir',
+  };
+  const personsRequest = (select = 'me') => {
+    return new Promise((resolve, reject) => {
+      const mock = person[select];
+      if (!mock) {
+        reject('not found');
+      }
+      resolve(mock);
+    });
+  };
 
-    return {
-      status: 200,
-      text: () => Promise.resolve(isString(data) ? data : JSON.stringify(data)),
-      json: () => Promise.resolve(data),
-    };
-  }
-  async function getUserData() {
-    try {
-      const response = await getLocalData('/getpeople', 'GET');
-      debugger;
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
+  const getData = () => {
+    personsRequest()
+      .then((results) => {
+        setFetchPerson(results.person);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   useEffect(() => {
-    getUserData();
-  }, []);
+    getData();
+  }, [fetchPerson]);
+
   return (
     <>
       {
@@ -48,20 +58,7 @@ const App = () => {
         //     </Switch>
         //   </Router>
       }
-      <div
-        style={{
-          display: 'flex',
-          height: '100%',
-          flexFlow: 'wrap',
-          marginTop: '1rem',
-          justifyContent: 'center',
-        }}
-      >
-        <ApiNYCTimes />
-        <ApiNYCTimes />
-        <ApiNYCTimes />
-        <ApiNYCTimes />
-      </div>
+      <ApiNYCTimes />
     </>
   );
 };
@@ -86,3 +83,34 @@ export default App;
 //useEffect(() => {
 //  mostPopular();
 //}, [mostPopular]);
+
+/*  function getLocalData(url, method) {
+    let data = null;
+    if (url.includes('/getpeople')) data = getPople();
+
+    return {
+      status: 200,
+      text: () => Promise.resolve(isString(data) ? data : JSON.stringify(data)),
+      json: () => Promise.resolve(data),
+    };
+  }
+  async function getUserData() {
+    try {
+      const response = await getLocalData('/getpeople', 'GET');
+      debugger;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    getUserData();
+  }, []); 
+  
+  
+  
+          <ApiNYCTimes />
+        <ApiNYCTimes />
+        <ApiNYCTimes />
+        <ApiNYCTimes />
+  */
