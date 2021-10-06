@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
   overflow: hidden;
   animation: fadeIn 0.5s ease-out;
   z-index: 100;
-  transition: all 0.4s;
+  transition: all 0.3s;
 `;
 export const ModalBox = styled.div`
   position: absolute;

@@ -15,6 +15,7 @@ import ApiNYCTimes from './ApiNYCTimes';
 import fs from 'fs';
 import { Display } from './components/Display';
 import { PracticeModal } from './PracticeModal.js';
+import { DisplayOnTheModal } from './components/DisplayOnTheModal';
 const App = () => {
   const [show, setShow] = useState(false);
 
@@ -65,7 +66,12 @@ const App = () => {
         //     </Switch>
         //   </Router>
       }
-      {show && <PracticeModal handleModal={handleModal} />}
+      {show && (
+        <PracticeModal
+          component={DisplayOnTheModal}
+          handleModal={handleModal}
+        />
+      )}
       <button onClick={handleModal}>Trigger Modal</button>
     </div>
   );
